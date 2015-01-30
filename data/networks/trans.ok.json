@@ -1,0 +1,1 @@
+{"nodes": [{"index": 0, "name": "preferred pronoun"}, {"index": 1, "name": "testosterone"}, {"index": 2, "name": "genderqueer"}], "links": [{"target": 1, "source": 0, "weight": 5.5}, {"target": 1, "source": 2, "weight": 0.5}]}

@@ -1,0 +1,1 @@
+{"nodes": [{"index": 0, "name": "estrogen"}, {"index": 1, "name": "testosterone"}, {"index": 2, "name": "hormone replacement therapy"}], "links": [{"target": 1, "source": 0, "weight": 0.5}, {"target": 2, "source": 0, "weight": 0.5}, {"target": 1, "source": 2, "weight": 0.5}]}
