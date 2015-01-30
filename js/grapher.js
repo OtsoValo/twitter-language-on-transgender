@@ -55,7 +55,8 @@ var grapher = (function () {
             // These are for rendering self reference.  The 'null' vertex is a secret extra vertex.
             t = 'self-loop';
             link.source = link.source + "-null";
-            link.source.type = t;
+            //link.source.type = t;
+
             //console.log(link)
           }
 
@@ -107,7 +108,7 @@ var grapher = (function () {
             .charge(opts.charge)
             .on("tick", tick);
 
-          //d3.select('svg').selectAll("*").remove();
+          d3.select(opts.where).selectAll("*").remove();
           //d3.select('svg').remove();
           var svg = d3.select(opts.where).append("svg:svg")
             .attr("width", opts.width)

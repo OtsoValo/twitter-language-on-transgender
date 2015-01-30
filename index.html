@@ -55,20 +55,39 @@
     <div class="container">
       <div class="row" style="margin-top:60px;">
         <div class="col-md-12">
-          <h3>NY: ALL</h3>
-          <div id="canvas_1"></div>
+          <div id="stateDropDownMenu" class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuforState" data-toggle="dropdown" aria-expanded="true">
+              Pick a state&nbsp;<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuforState">
+            </ul>
+          </div>
         </div>
-        <!-- <div class="col-md-6">
-          <h3>CA: TRANS</h3>
-          <div id="canvas_2"></div>
-        </div> -->
       </div>
       <div class="row" style="margin-top:60px;">
+        <div class="col-md-6" id="network_all">
+          <h3></h3>
+          <div id="canvas_all"></div>
+        </div>
+        <div class="col-md-6" id="network_trans">
+          <h3></h3>
+          <div id="canvas_trans"></div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:60px;">
+        <div class="col-md-6">
+          <div id="tagcloud_all"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="tagcloud_trans"></div>
+        </div>
+      </div>
+      <!-- <div class="row" style="margin-top:60px;">
         <div class="col-md-12">
           <h3>NY: TRANS</h3>
           <div id="canvas_2"></div>
         </div>
-      </div>
+      </div> -->
       <hr>
 
       <footer>
@@ -77,6 +96,7 @@
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
+        <script src="js/vendor/lodash.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
