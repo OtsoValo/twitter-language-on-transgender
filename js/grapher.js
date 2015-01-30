@@ -108,7 +108,7 @@ var grapher = (function () {
             .charge(opts.charge)
             .on("tick", tick);
 
-          d3.select(opts.where).selectAll("*").remove();
+
           //d3.select('svg').remove();
           var svg = d3.select(opts.where).append("svg:svg")
             .attr("width", opts.width)
@@ -280,6 +280,7 @@ var grapher = (function () {
           update();
         };
 
+      d3.select(opts.where).selectAll("*").remove();
       d3.json(graph_data_uri, function(error, graph) {
         draw_graph(graph, opts);
       });
