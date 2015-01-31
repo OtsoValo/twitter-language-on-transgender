@@ -1,0 +1,31 @@
+svg {
+  font: 10px sans-serif;
+  display: block;
+  margin: 0px auto;
+}
+
+.background {
+  fill: #eee;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.option-bar {
+  margin-top: 20px;
+}
+
+.rowspan {
+  margin-top: 20px;
+}
