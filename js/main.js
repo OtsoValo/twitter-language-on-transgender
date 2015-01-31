@@ -17,7 +17,7 @@
       $(this).parents(".dropdown").find('.btn').val($(this).text());
 
       state = $(this).text()
-      $("#network_all h3").text(state.toUpperCase() + ": ALL");
+      $(".label_all").text(state.toUpperCase() + ": ALL");
 
       grapher.Graph('./data/networks/all.' + state + '.json', {
         where: "#canvas_all",
@@ -28,13 +28,25 @@
         height: 500
       });
 
-      $("#network_trans h3").text(state.toUpperCase() + ": TRANS*");
+      cooccurrence.Matrix('./data/networks/all.' + state + '.json', {
+        where: "#cooccurrence_matrix_all",
+        width: 500,
+        height: 500
+      });
+
+      $(".label_trans").text(state.toUpperCase() + ": TRANS*");
 
       grapher.Graph('./data/networks/trans.' + state + '.json', {
         where: "#canvas_trans",
         r: 8,
         gravity: 0.02,
         linkDistance: 150,
+        width: 500,
+        height: 500
+      });
+
+      cooccurrence.Matrix('./data/networks/trans.' + state + '.json', {
+        where: "#cooccurrence_matrix_trans",
         width: 500,
         height: 500
       });

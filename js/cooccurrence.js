@@ -8,8 +8,8 @@ var cooccurrence = (function () {
   cooccurrence.Matrix = function Matrix(graph_data_uri, opts) {
     var default_opts = {
       where: "#canvas",
-      width: 200,
-      height: 200,
+      width: 500,
+      height: 500,
       margin: {
         top: 100,
         right: 0,
@@ -28,6 +28,7 @@ var cooccurrence = (function () {
       z = d3.scale.linear().domain([0, 4]).clamp(true),
       c = d3.scale.category10().domain(d3.range(10));
 
+    d3.select(opts.where).selectAll("*").remove();
     var svg = d3.select(opts.where).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -35,9 +36,8 @@ var cooccurrence = (function () {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.select(opts.where).selectAll("*").remove();
-    d3.json(graph_data_uri, function(graph) {
 
+    d3.json(graph_data_uri, function(graph) {
       var matrix = [],
         nodes = graph.nodes,
         n = nodes.length;
@@ -57,12 +57,12 @@ var cooccurrence = (function () {
 
       // Convert links to matrix; count character occurrences.
       graph.links.forEach(function(link) {
-        matrix[link.source][link.target].z += link.value;
-        matrix[link.target][link.source].z += link.value;
-        matrix[link.source][link.source].z += link.value;
-        matrix[link.target][link.target].z += link.value;
-        nodes[link.source].count += link.value;
-        nodes[link.target].count += link.value;
+        matrix[link.source][link.target].z += link.weight;
+        matrix[link.target][link.source].z += link.weight;
+        matrix[link.source][link.source].z += link.weight;
+        matrix[link.target][link.target].z += link.weight;
+        nodes[link.source].count += link.weight;
+        nodes[link.target].count += link.weight;
       });
 
       // Precompute the orders.
@@ -104,7 +104,7 @@ var cooccurrence = (function () {
         .attr("dy", ".32em")
         .attr("text-anchor", "end")
         .text(function(d, i) {
-          return strip_name(nodes[i].name);
+          return nodes[i].name;
         });
 
       var column = svg.selectAll(".column")
@@ -124,7 +124,7 @@ var cooccurrence = (function () {
         .attr("dy", ".32em")
         .attr("text-anchor", "start")
         .text(function(d, i) {
-          return strip_name(nodes[i].name);
+          return nodes[i].name;
         });
 
       function row(row) {
@@ -162,10 +162,10 @@ var cooccurrence = (function () {
         d3.selectAll(opts.where + " text").classed("active", false);
       }
 
-      d3.select("#order").on("change", function() {
-        clearTimeout(timeout);
-        order(this.value);
-      });
+      // d3.select("#order").on("change", function() {
+      //   clearTimeout(timeout);
+      //   order(this.value);
+      // });
 
       function order(value) {
         x.domain(orders[value]);
@@ -197,9 +197,9 @@ var cooccurrence = (function () {
       }
 
       var timeout = setTimeout(function() {
-        order("name");
-        d3.select("#order").property("selectedIndex", 0).node().focus();
-      }, 5000);
+        order("count");
+        //d3.select("#order").property("selectedIndex", 0).node().focus();
+      }, 1000);
     });
   };
 

@@ -1,31 +1,31 @@
-svg {
+.cooccurrence svg {
   font: 10px sans-serif;
   display: block;
   margin: 0px auto;
 }
 
-.background {
+.cooccurrence .background {
   fill: #eee;
 }
 
-line {
+.cooccurrence line {
   stroke: #fff;
 }
 
-text.active {
+.cooccurrence text.active {
   fill: red;
 }
 
-.axis path, .axis line {
+.cooccurrence .axis path, .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-.option-bar {
+.cooccurrence .option-bar {
   margin-top: 20px;
 }
 
-.rowspan {
+.cooccurrence .rowspan {
   margin-top: 20px;
 }
