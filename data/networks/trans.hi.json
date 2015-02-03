@@ -1,1 +1,1 @@
-{"nodes": [{"index": 0, "name": "testosterone"}, {"index": 1, "name": "voice"}], "links": [{"target": 1, "source": 0, "weight": 0.5}]}
+{"nodes": [{"name": "hormone replacement therapy", "index": 0}, {"name": "testosterone", "index": 1}, {"name": "trans", "index": 2}, {"name": "cis", "index": 3}], "links": [{"source": 0, "weight": 0.5, "target": 1}, {"source": 1, "weight": 0.5, "target": 2}, {"source": 3, "weight": 5.5, "target": 1}]}
