@@ -1,1 +1,1 @@
-{"links": [{"weight": 5.5, "target": 1, "source": 0}, {"weight": 0.5, "target": 3, "source": 2}, {"weight": 0.5, "target": 0, "source": 3}], "nodes": [{"index": 0, "name": "trans"}, {"index": 1, "name": "trans-man"}, {"index": 2, "name": "cis"}, {"index": 3, "name": "testosterone"}]}
+{"links": [{"weight": 0.5, "target": 1, "source": 0}, {"weight": 5.5, "target": 3, "source": 2}, {"weight": 0.5, "target": 2, "source": 1}], "nodes": [{"name": "cis", "index": 0}, {"name": "testosterone", "index": 1}, {"name": "trans", "index": 2}, {"name": "trans-man", "index": 3}]}
