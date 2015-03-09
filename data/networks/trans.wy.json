@@ -1,1 +1,1 @@
-{"links": [{"source": 0, "weight": 0.5, "target": 1}], "nodes": [{"name": "trans", "index": 0}, {"name": "trans-man", "index": 1}]}
+{"nodes": [{"index": 0, "name": "trans"}, {"index": 1, "name": "trans-man"}], "links": [{"target": 1, "source": 0, "weight": 0.5}]}
